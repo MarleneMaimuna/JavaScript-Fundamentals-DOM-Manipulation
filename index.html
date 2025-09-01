@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JS Fundamentals • DOM Manipulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-royal">
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>JavaScript Fundamentals • DOM Manipulation</h1>
+
+      <!-- THEME CONTROLS -->
+      <div class="theme-controls" role="group" aria-label="Theme controls">
+        <label for="themeSelect" class="sr-only">Theme</label>
+        <select id="themeSelect" class="select">
+          <option value="royal">Royal Purple & Gold</option>
+          <option value="ivory">Ivory & Gold</option>
+          <option value="forest">Forest & Sand</option>
+          <option value="ocean">Ocean & Sky</option>
+          <option value="contrast">High Contrast</option>
+        </select>
+
+        <button id="lightToggle" class="btn" aria-pressed="false" title="Toggle light mode">
+          Light mode
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- THEME BANNER -->
+  <section class="theme-banner">
+    <div class="container">
+      <h2>Light of the World</h2>
+      <p class="muted">“I am the light of the world.” <small>(John 8:12)</small></p>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- ===================== Part 1: Basics ===================== -->
+    <section class="card" aria-labelledby="part1-title">
+      <h2 id="part1-title">Part 1 — Basics</h2>
+      <p class="muted">Enter your name and age; JS decides what to show using variables and conditionals.</p>
+      <form id="basicForm" class="grid-2">
+        <label for="nameInput">Name</label>
+        <input id="nameInput" name="name" type="text" placeholder="e.g., Alex" required />
+
+        <label for="ageInput">Age</label>
+        <input id="ageInput" name="age" type="number" min="0" step="1" placeholder="e.g., 18" required />
+
+        <div class="row">
+          <button type="submit" class="btn">Check</button>
+          <button type="reset" class="btn btn-ghost">Clear</button>
+        </div>
+      </form>
+
+      <div id="basicOutput" class="output" aria-live="polite"></div>
+    </section>
+
+   <!-- ===================== Part 2: Functions ===================== -->
+<section class="card" aria-labelledby="part2-title">
+  <h2 id="part2-title">Part 2 — Functions (Buy the Bible)</h2>
+  <p class="muted">Add Bibles to the cart; totals are calculated by reusable functions.</p>
+
+  <form id="cartForm" class="grid-3">
+    <label for="itemName">Item</label>
+    <!-- travado como "Bible" para refletir o tema -->
+    <input id="itemName" type="text" value="Bible" readonly />
+
+    <label for="price">Price</label>
+    <input id="price" type="number" step="0.01" min="0" placeholder="e.g., 12.99" required />
+
+    <label for="qty">Qty</label>
+    <input id="qty" type="number" step="1" min="1" value="1" required />
+
+    <div class="row">
+      <button type="submit" class="btn">Add Bible</button>
+      <button type="button" id="clearCart" class="btn btn-ghost">Clear cart</button>
+    </div>
+  </form>
+
+  <ul id="cartList" class="list"></ul>
+  <p class="total">Total: <strong id="totalAmount">$0.00</strong></p>
+</section>
+
+
+    <!-- ===================== Part 3: Loops ===================== -->
+    <section class="card" aria-labelledby="part3-title">
+      <h2 id="part3-title">Part 3 — Loops</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Render topics (forEach)</h3>
+          <ul id="topicList" class="list"></ul>
+        </div>
+        <div>
+          <h3>Countdown (for + while)</h3>
+          <button id="countdownBtn" class="btn">Start 5→0</button>
+          <ul id="countdownList" class="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Part 4: DOM ===================== -->
+    <section class="card" aria-labelledby="part4-title">
+      <h2 id="part4-title">Part 4 — DOM Interactions</h2>
+      <div class="grid-2">
+        <div>
+          <label for="noteInput">Quick note (prayer/encouragement)</label>
+          <textarea id="noteInput" rows="4" placeholder="Type something…"></textarea>
+          <p class="muted">Characters: <span id="charCount">0</span></p>
+        </div>
+        <div>
+          <button id="addNoteBtn" class="btn">Add note below</button>
+          <ul id="noteList" class="list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2025 JS Fundamentals Demo • Grid + Flexbox • No frameworks</small>
+    </div>
+  </footer>
+
+  <!-- Toasts & Back to Top -->
+  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+  <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
